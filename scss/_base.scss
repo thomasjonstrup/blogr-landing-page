@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+$font-family-body: "Ubuntu", sans-serif;
+$font-family-headings: "Overpass", sans-serif;
+
+// Animate
+$animate-duration: 1s;
+$animate-delay: 1s;
+$animate-repeat: 1;
+
+// Primary
+$dark-blue-intro: hsl(217, 28%, 15%);
+$dark-blue-main: hsl(218, 28%, 13%);
+$dark-blue-footer: hsl(216, 53%, 9%);
+$dark-blue-tesitmonials: hsl(219, 30%, 18%);
+
+$light-red: hsl(356, 100%, 66%);
+
+$very-light-red: hsl(355, 100%, 74%);
+
+$very-dark-blue: hsl(208, 49%, 24%);
+
+// Accent
+$cyan: hsl(176, 68%, 64%);
+$blue: hsl(198, 60%, 50%);
+
+// Neutral
+
+$white: hsl(0, 0%, 100%);
+$grayish-blue: hsl(240, 2%, 79%);
+$very-dark-grayish-blue: hsl(207, 13%, 34%);
+$very-dark-black-blue: hsl(240, 10%, 16%);
+
+// Gradients
+$very-light-red: hsl(13, 100%, 72%);
+$light-red-grad: hsl(353, 100%, 62%);
+
+$very-dark-gray-blue: hsl(237, 17%, 21%);
+$very-dark-desat-blue: hsl(237, 23%, 32%);
+
+// Reset
+
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: $font-family-body;
+	color: $very-dark-grayish-blue;
+	background-color: $white;
+	line-height: 1.6;
+	background-repeat: no-repeat, no-repeat;
+	background-position: top 33rem right -40rem, bottom 32rem left -53rem;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+h1 {
+	font-size: 3.6rem;
+	font-family: $font-family-headings;
+
+	@media only screen and (min-width: 1000px) {
+		h1 {
+			font-size: 5rem;
+		}
+	}
+}
+
+h1,
+h2 {
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 1rem 0;
+}
+
+h3 {
+	font-size: 1.9rem;
+}
+
+/* p {
+	margin: 10px 0;
+} */
+
+img {
+	width: 100%;
+}
+
+$breakpoints-up: (
+	"md": "750px",
+	"ld": "1024px",
+	"xd": "1376px",
+);
+
+$breakpoints-down: (
+	"md": "750px",
+	"ld": "1024px",
+	"xd": "1376px",
+);
+
+@mixin breakpoint-up($size) {
+	@media screen and (min-width: map-get($breakpoints-up, $size)) {
+		@content;
+	}
+}
+@mixin breakpoint-down($size) {
+	@media screen and (max-width: map-get($breakpoints-down, $size)) {
+		@content;
+	}
+}
+
+@function calculateRem($size) {
+	$remSize: $size / 16px;
+	@return #{$remSize}rem;
+}
+
+// 640px, 1024px, 1400px
+$breakpoints-up: (
+	/* 	"medium": "40em",
+	"large": "64em",
+	"xlarge": "87.5em", */ "medium": "640px",
+	"large": "1024px",
+	"xlarge": "1400px"
+);
+
+// 639px, 1023px, 1399px
+$breakpoints-down: (
+	/* 	"small": "39.9375em",
+	"medium": "63.9375em",
+	"large": "87.4375em", */
+		"small": "639px",
+	"medium": "1023px",
+	"large": "1399px"
+);
+
+@mixin breakpoint-up($size) {
+	@media (min-width: map-get($breakpoints-up, $size)) {
+		@content;
+	}
+}
+
+@mixin breakpoint-down($size) {
+	@media (max-width: map-get($breakpoints-down, $size)) {
+		@content;
+	}
+}
+
+// Visibility
+.hide-for-mobile {
+	@include breakpoint-down(small) {
+		display: none;
+	}
+}
+
+.hide-for-desktop {
+	@include breakpoint-up(medium) {
+		display: none;
+	}
+}
+
+/* Utilities */
+.container {
+	max-width: 1100px;
+	margin: 0 auto;
+	/* 	overflow: auto; */
+	padding: 0 4rem;
+	/* 	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh; */
+}
+
+/* Text sizes */
+.lead {
+	font-size: 20px;
+}
+
+.sm {
+	font-size: 1rem;
+}
+
+.lead {
+	font-size: 2rem;
+}
+
+.lg {
+	font-size: 3rem;
+}
+
+.xl {
+	font-size: 4rem;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.grid {
+	display: grid;
+
+	grid-template-columns: repeat(1, 1fr);
+
+	@include breakpoint-up(medium) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	gap: 2rem;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+
+	&-3 {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.mg-bottom-md {
+	margin-bottom: calc(2.25rem + 1.5vw);
+}
+
+// Mixins
+$max: 20;
+$offset: 1;
+$unit: "rem";
+
+@mixin generate-styling($className, $styleName) {
+	$i: 0;
+	@while $i <= $max {
+		#{$className + $i} {
+			#{$styleName}: #{$i + $unit};
+		}
+		$i: $i + $offset;
+	}
+}
+
+// Flexbox mixins
+@mixin flexbox {
+	display: flex;
+}
+
+@mixin inline-flex {
+	display: inline-flex;
+}
+
+// flex shorthand
+// applites to: flex items
+// positive number, intial, auto or none
+@mixin flex($fg: 1, $fs: 0, $fb: auto) {
+	// set a variable to be used by box-flex properties
+	$fg-boxflex: $fg;
+
+	// Box-Flex only supports a flex-grow value so lets grab the
+	// first item in the list and just return that.
+	@if type-of($fg) == "list" {
+		$fg-boxflex: nth($fg, 1);
+	}
+
+	flex: $fg $fs $fb;
+}
+
+// Flex direction
+// row (default) | row-reverse | column | column-reverse
+@mixin flex-direction($direction: row) {
+	flex-direction: $direction;
+}
+
+// Margins
+@include generate-styling(".m-t-", "margin-top");
+@include generate-styling(".m-r-", "margin-right");
+@include generate-styling(".m-b-", "margin-bottom");
+@include generate-styling(".m-l-", "margin-left");
+@include generate-styling(".m-x-", "margin");
+// Paddings
+@include generate-styling(".p-t-", "padding-top");
+@include generate-styling(".p-r-", "padding-right");
+@include generate-styling(".p-b-", "padding-bottom");
+@include generate-styling(".p-l-", "padding-left");
+@include generate-styling(".p-x-", "padding");
+
+@keyframes backInDown {
+	0% {
+		transform: translateY(-120rem) scale(0.7);
+		opacity: 0.7;
+	}
+
+	80% {
+		transform: translateY(0rem) scale(0.7);
+		opacity: 0.7;
+	}
+
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+// Animate
+.animate {
+	&__animated {
+		animation-duration: 1s;
+		animation-duration: var($animate-duration);
+		animation-fill-mode: both;
+	}
+
+	&__backInDown {
+		animation-name: backInDown;
+	}
+}
+
+/* Margin */
+/* .my {
+	&-1 {
+		margin: 1rem 0;
+	}
+	&-2 {
+		margin: 1.5rem 0;
+	}
+	&-3 {
+		margin: 2rem 0;
+	}
+	&-4 {
+		margin: 3rem 0;
+	}
+	&-5 {
+		margin: 4rem 0;
+	}
+}
+
+.m {
+	&-1 {
+		margin: 1rem;
+	}
+	&-2 {
+		margin: 1.5rem;
+	}
+	&-3 {
+		margin: 2rem;
+	}
+	&-4 {
+		margin: 3rem;
+	}
+	&-5 {
+		margin: 4rem;
+	}
+}
+ */
+/* Padding */
+/* .py {
+	&-1 {
+		padding: 1rem 0;
+	}
+	&-2 {
+		padding: 1.5rem 0;
+	}
+	&-3 {
+		padding: 2rem 0;
+	}
+	&-4 {
+		padding: 3rem 0;
+	}
+	&-5 {
+		padding: 4rem 0;
+	}
+}
+
+.p {
+	&-1 {
+		padding: 1rem;
+	}
+	&-2 {
+		padding: 1.5rem;
+	}
+	&-3 {
+		padding: 2rem;
+	}
+	&-4 {
+		padding: 3rem;
+	}
+	&-5 {
+		padding: 4rem;
+	}
+} */

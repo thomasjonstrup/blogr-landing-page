@@ -1,0 +1,283 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+@use "sass:math" as math;
+
+.hero {
+	/* 	background-image: url("../images/bg-curvy-mobile.svg"); */
+	/* 	background: linear-gradient($very-light-red, $light-red-grad); */
+	padding-bottom: 3rem;
+
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	@include breakpoint-up(medium) {
+		padding-bottom: 15rem;
+		/* 	background-image: url("../images/bg-curvy-desktop.svg"); */
+	}
+
+	&__image {
+		max-width: 65rem;
+		margin: 0 auto;
+	}
+
+	&__texts {
+		text-align: center;
+	}
+
+	&__btns {
+		@include flexbox;
+		@include flex;
+		justify-content: center;
+		gap: 2rem;
+	}
+}
+
+.mx-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.w-full {
+	width: 100%;
+}
+
+.text-center {
+	text-align: center;
+}
+
+img,
+video {
+	max-width: 100%;
+	height: auto;
+}
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+	display: block;
+	vertical-align: middle;
+}
+
+// infrastructure
+.infrastructure {
+	background: url("../images/bg-pattern-circles.svg"),
+		linear-gradient(to left, $very-dark-gray-blue, $very-dark-desat-blue);
+	border-bottom-left-radius: 10rem;
+	border-top-right-radius: 10rem;
+	background-size: cover, cover;
+	background-repeat: no-repeat, no-repeat;
+	background-position: -5rem -22rem, center center;
+	color: $white;
+	text-align: center;
+
+	&__flex {
+		display: flex;
+		justify-content: space-between;
+		gap: 2rem;
+		align-items: center;
+		flex-direction: column;
+
+		@include breakpoint-up(medium) {
+			flex-direction: row;
+		}
+	}
+
+	&__image {
+		flex: 1;
+	}
+
+	&__texts {
+		flex: 1;
+	}
+}
+
+// About
+.future {
+	padding-bottom: 10rem;
+
+	&__flex {
+		display: flex;
+		justify-content: space-between;
+		gap: 2rem;
+		align-items: center;
+		flex-direction: column;
+
+		@include breakpoint-up(medium) {
+			flex-direction: row-reverse;
+		}
+	}
+
+	&__heading {
+		text-align: center;
+	}
+
+	&__image {
+		flex: 1;
+	}
+
+	&__texts {
+		flex: 1;
+	}
+	&__link {
+		position: relative;
+		color: $cyan;
+		&::before {
+			content: "";
+			position: absolute;
+			height: 0.1rem;
+			width: 15rem;
+			bottom: -0.2rem;
+			background: $cyan; //linear-gradient(to right, $cyan, $blue);
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			width: 15rem;
+			height: 15rem;
+			/* 			background-image: url("../images/icon-arrow.svg"); */
+			background-repeat: no-repeat;
+			top: 0.2rem;
+		}
+	}
+}
+
+.simple {
+	padding-bottom: 10rem;
+
+	&__flex {
+		display: flex;
+		justify-content: space-between;
+		gap: 2rem;
+		align-items: center;
+		flex-direction: column;
+
+		@include breakpoint-up(medium) {
+			flex-direction: row;
+		}
+	}
+
+	&__image {
+		flex: 1;
+	}
+
+	&__texts {
+		flex: 1;
+	}
+	&__link {
+		position: relative;
+		color: $cyan;
+		&::before {
+			content: "";
+			position: absolute;
+			height: 0.1rem;
+			width: 15rem;
+			bottom: -0.2rem;
+			background: $cyan; //linear-gradient(to right, $cyan, $blue);
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			width: 15rem;
+			height: 15rem;
+			/* 			background-image: url("../images/icon-arrow.svg"); */
+			background-repeat: no-repeat;
+			top: 0.2rem;
+		}
+	}
+}
+
+// CTA
+.cta {
+	margin: auto;
+	max-width: 110rem;
+	width: 85%;
+	padding: 2rem;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 30%);
+	border-radius: 0.8rem;
+	background-color: $dark-blue-main;
+	position: relative;
+}
+
+// Footer
+.footer {
+	background-color: $very-dark-black-blue;
+	border-top-right-radius: 6rem;
+	color: $white;
+	/* 	margin-top: -5rem; */
+	padding-top: 10rem;
+	padding-bottom: 4rem;
+
+	&__content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		flex-direction: column;
+	}
+
+	&__logo {
+		width: 12rem;
+		padding-bottom: 2rem;
+	}
+	@include breakpoint-up(medium) {
+		&__bottom {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			gap: 4rem;
+		}
+	}
+
+	&__icon {
+		font-size: 2rem;
+		color: $white;
+	}
+	&__socials {
+		@include flexbox;
+		justify-content: center;
+		align-content: center;
+		gap: 2rem;
+	}
+	&__image {
+		width: 2rem;
+		height: 2rem;
+	}
+
+	&__info {
+		display: flex;
+		gap: 2rem;
+		padding-bottom: 2rem;
+	}
+	&__social {
+		border: 0.1rem solid $white;
+		width: 4rem;
+		height: 4rem;
+		padding: 1rem;
+		border-radius: 50%;
+		@include flexbox;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__attribution {
+		font-size: 1.1rem;
+		text-align: center;
+
+		a {
+			color: $light-red;
+		}
+
+		animation: slideInFromBottom 500ms ease-in;
+	}
+}
