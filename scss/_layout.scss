@@ -117,7 +117,7 @@ object {
 	}
 
 	&__heading {
-		text-align: center;
+		color: $very-dark-blue;
 	}
 
 	&__image {
@@ -164,6 +164,10 @@ object {
 		@include breakpoint-up(medium) {
 			flex-direction: row;
 		}
+	}
+
+	&__heading {
+		color: $very-dark-blue;
 	}
 
 	&__image {
