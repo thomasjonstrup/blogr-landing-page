@@ -2,6 +2,8 @@
 
 ![Design preview for the Blogr landing page coding challenge](./design/desktop-preview.jpg)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d0a2f5d5-2feb-46db-b77e-e56a8e353101/deploy-status)](https://app.netlify.com/sites/blogr-landing-page/deploys)
+
 ## Welcome! 👋
 
 Thanks for checking out this front-end coding challenge.
