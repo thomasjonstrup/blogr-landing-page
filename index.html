@@ -29,7 +29,7 @@
 	<body>
 		<header class="header">
 			<div class="header__content container">
-				<div class="header__nav-container">
+				<div class="header__left">
 					<div class="header__logo">
 						<a href="#">
 							<img src="./images/logo.svg" alt="logo" />
@@ -39,26 +39,194 @@
 						<ul class="nav__menu">
 							<li class="nav__item">
 								<a href="#" class="nav__link">Features</a>
+								<img
+									src="./images/icon-arrow-light.svg"
+									alt="dropdown-icon"
+								/>
+								<div class="nav__dropdown">
+									<ul class="nav__sub-menu">
+										<li>
+											<a href="#" class="nav__link"
+												>Overview</a
+											>
+										</li>
+										<li>
+											<a href="#" class="nav__link"
+												>Pricing</a
+											>
+										</li>
+										<li>
+											<a href="#" class="nav__link"
+												>Marketplace</a
+											>
+										</li>
+										<li>
+											<a href="#" class="nav__link"
+												>Features</a
+											>
+										</li>
+									</ul>
+								</div>
 							</li>
 							<li class="nav__item">
 								<a href="#" class="nav__link">Team</a>
+								<img
+									src="./images/icon-arrow-light.svg"
+									alt="dropdown-icon"
+								/>
+
+								<div class="nav__dropdown">
+									<ul class="nav__sub-menu">
+										<li>
+											<a href="#" class="nav__link"
+												>About</a
+											>
+										</li>
+										<li>
+											<a href="#" class="nav__link"
+												>Team</a
+											>
+										</li>
+										<li>
+											<a href="#" class="nav__link"
+												>Blog</a
+											>
+										</li>
+										<li>
+											<a href="#" class="nav__link"
+												>Careers</a
+											>
+										</li>
+									</ul>
+								</div>
 							</li>
 							<li class="nav__item">
 								<a href="#" class="nav__link">Sign In</a>
+								<img
+									src="./images/icon-arrow-light.svg"
+									alt="dropdown-icon"
+								/>
+								<div class="nav__dropdown">
+									<ul class="nav__sub-menu">
+										<li>
+											<a href="#" class="nav__link"
+												>Contact</a
+											>
+										</li>
+										<li>
+											<a href="#" class="nav__link"
+												>Newsletter</a
+											>
+										</li>
+										<li>
+											<a href="#" class="nav__link"
+												>LinkedIn</a
+											>
+										</li>
+									</ul>
+								</div>
 							</li>
 						</ul>
 					</nav>
 				</div>
-				<div class="header__nav-container">
-					<ul class="nav__menu">
-						<li class="nav__item">
-							<a href="#" class="nav__link">Login</a>
+				<div class="mobile__menu" id="mobile-menu">
+					<ul class="mobile__list">
+						<li class="mobile__item">
+							<a href="#" class="mobile__link">Features</a>
+							<img
+								src="./images/icon-arrow-dark.svg"
+								alt="dropdown-icon"
+							/>
+							<div class="mobile__dropdown">
+								<ul class="mobile__sub-menu">
+									<li>
+										<a href="#" class="mobile__link"
+											>Contact</a
+										>
+									</li>
+									<li>
+										<a href="#" class="mobile__link"
+											>Newsletter</a
+										>
+									</li>
+									<li>
+										<a href="#" class="mobile__link"
+											>LinkedIn</a
+										>
+									</li>
+								</ul>
+							</div>
 						</li>
-						<li class="nav__item">
-							<a href="#" class="btn btn--primary">Sign up</a>
+						<li class="mobile__item">
+							<a href="#" class="mobile__link">Company</a>
+							<img
+								src="./images/icon-arrow-dark.svg"
+								alt="dropdown-icon"
+							/>
+							<div class="mobile__dropdown">
+								<ul class="mobile__sub-menu">
+									<li>
+										<a href="#" class="mobile__link"
+											>Contact</a
+										>
+									</li>
+									<li>
+										<a href="#" class="mobile__link"
+											>Newsletter</a
+										>
+									</li>
+									<li>
+										<a href="#" class="mobile__link"
+											>LinkedIn</a
+										>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="mobile__item">
+							<a href="#" class="mobile__link">Connect</a>
+							<img
+								src="./images/icon-arrow-dark.svg"
+								alt="dropdown-icon"
+							/>
+							<div class="mobile__dropdown">
+								<ul class="mobile__sub-menu">
+									<li>
+										<a href="#" class="mobile__link"
+											>Contact</a
+										>
+									</li>
+									<li>
+										<a href="#" class="mobile__link"
+											>Newsletter</a
+										>
+									</li>
+									<li>
+										<a href="#" class="mobile__link"
+											>LinkedIn</a
+										>
+									</li>
+								</ul>
+							</div>
 						</li>
 					</ul>
 				</div>
+				<div class="hamburger">
+					<img
+						src="./images/icon-hamburger.svg"
+						id="hamburger"
+						alt="hamburger__image"
+						class="hamburger__image"
+					/>
+				</div>
+				<ul class="nav__menu">
+					<li class="nav__item">
+						<a href="#" class="nav__link">Login</a>
+					</li>
+					<li class="nav__item">
+						<a href="#" class="btn btn--primary">Sign up</a>
+					</li>
+				</ul>
 			</div>
 			<section class="hero">
 				<div class="container">
@@ -191,33 +359,41 @@
 					<img src="./images/logo.svg" alt="logo" />
 				</div>
 				<div class="footer__nav m-b-4">
-					<h3>Product</h3>
+					<h3 class="footer__heading">Product</h3>
 					<ul>
-						<li>Overview</li>
-						<li>Pricing</li>
-						<li>Marketplace</li>
-						<li>Features</li>
-						<li>Integrations</li>
+						<li><a href="#" class="footer__link"> Overview </a></li>
+						<li><a href="#" class="footer__link"> Pricing </a></li>
+						<li>
+							<a href="#" class="footer__link"> Marketplace </a>
+						</li>
+						<li><a href="#" class="footer__link"> Features </a></li>
+						<li>
+							<a href="#" class="footer__link"> Integrations </a>
+						</li>
 					</ul>
 				</div>
 
 				<div class="footer__nav m-b-4">
-					<h3>Company</h3>
+					<h3 class="footer__heading">Company</h3>
 					<ul>
-						<li>About</li>
-						<li>Team</li>
-						<li>Blog</li>
-						<li>Careers</li>
+						<li><a href="#" class="footer__link"> About </a></li>
+						<li><a href="#" class="footer__link"> Team </a></li>
+						<li><a href="#" class="footer__link"> Blog </a></li>
+						<li><a href="#" class="footer__link"> Careers </a></li>
 					</ul>
 				</div>
 				<div class="footer__nav m-b-4">
-					<h3>Connect</h3>
+					<h3 class="footer__heading">Connect</h3>
 					<ul>
-						<li>Contact</li>
-						<li>Newsletter</li>
-						<li>LinkedIn</li>
+						<li><a href="#" class="footer__link"> Contact </a></li>
+						<li>
+							<a href="#" class="footer__link"> Newsletter </a>
+						</li>
+						<li><a href="#" class="footer__link"> LinkedIn </a></li>
 					</ul>
 				</div>
+			</div>
+			<div class="container">
 				<div class="footer__attribution p-t-2 p-b-2">
 					Challenge by
 					<a
@@ -231,5 +407,6 @@
 				</div>
 			</div>
 		</footer>
+		<script src="./js/main.js"></script>
 	</body>
 </html>

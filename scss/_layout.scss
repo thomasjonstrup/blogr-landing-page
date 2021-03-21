@@ -78,6 +78,11 @@ object {
 	background-position: -5rem -22rem, center center;
 	color: $white;
 	text-align: center;
+	/* 	padding: 5rem 0 5rem 5rem; */
+
+	@include breakpoint-up(medium) {
+		text-align: inherit;
+	}
 
 	&__flex {
 		display: flex;
@@ -93,6 +98,13 @@ object {
 
 	&__image {
 		flex: 1;
+		position: relative;
+		/*
+		img {
+			left: 0;
+			position: absolute;
+			top: -32rem;
+		} */
 	}
 
 	&__texts {
@@ -222,18 +234,39 @@ object {
 	padding-top: 10rem;
 	padding-bottom: 4rem;
 
+	&__heading {
+		margin-bottom: 2rem;
+	}
+
 	&__content {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
 		flex-direction: column;
+
+		@include breakpoint-up(medium) {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-start;
+			text-align: center;
+		}
 	}
 
 	&__logo {
 		width: 12rem;
 		padding-bottom: 2rem;
 	}
+
+	li {
+		list-style: none;
+		margin-bottom: 1rem;
+	}
+
+	&__link {
+		color: $grayish-blue;
+	}
+
 	@include breakpoint-up(medium) {
 		&__bottom {
 			display: flex;
