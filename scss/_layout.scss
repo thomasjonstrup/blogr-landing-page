@@ -82,6 +82,12 @@ object {
 
 	@include breakpoint-up(medium) {
 		text-align: inherit;
+
+		height: 40rem;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
 	}
 
 	&__flex {
